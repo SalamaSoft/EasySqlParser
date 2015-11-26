@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="EasySqlParser" default="generateJar" basedir=".">
+<project name="generateJar-EasySqlParser" default="generateJar" basedir=".">
 	<!-- Configure directories -->
 	<!-- 
-	<property name="jdk.dir"         value="C:\Java\jdk1.6.0_19"/>
-	-->
+	<property name="jdk.dir"         value="C:\jdk1.6.0_20"/>
+	 -->
 	<property name="src.dir"         value="src"/>
 	<property name="bin.dir"         value="bin"/>
 	<property name="bintemp.dir"     value="binTemp"/>
@@ -19,6 +19,13 @@
 		</javac>
 	</target>
 	-->
+
+	<target name="copySrc">
+		<copy todir="${bintemp.dir}" overwrite="true" verbose="false" >
+			<fileset dir="${src.dir}" >
+			</fileset>
+		</copy>
+	</target>
 
 	<target name="createBinTmp">
 		<mkdir dir="${bintemp.dir}"/>
@@ -56,7 +63,7 @@
 	</target>
 	
 	<target name="generateJar" description="create jar" 
-		depends="createBinTmp,copyClass,deleteJUnitClass,deleteVssFile,deleteSVN"> 
+		depends="createBinTmp,copyClass,copySrc,deleteJUnitClass,deleteVssFile,deleteSVN"> 
 		<jar jarfile="${jar.name}" basedir="${bintemp.dir}" />
 		<delete dir="${bintemp.dir}"></delete>
 	</target>
