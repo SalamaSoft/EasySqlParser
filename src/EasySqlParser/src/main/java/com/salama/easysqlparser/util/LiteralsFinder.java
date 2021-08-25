@@ -43,6 +43,15 @@ public class LiteralsFinder {
                         //reset begin
                         begin = -1;
                     }
+                } else if (c == '\\') {
+                    nextPos = curPos + 1;
+
+                    if (nextPos < input.length()) {
+                        //escape chars, then move to next char
+                        curPos++;
+                    } else {
+                        //do nothing
+                    }
                 } else {
                     //do nothing
                 }

@@ -160,7 +160,7 @@ public class SelectQuery extends SqlObj {
             }
         }
 
-        logger.debug("symbolizeSubQuery() Takes MS:" + Long.toString(System.currentTimeMillis() - beginTime));
+        //logger.debug("symbolizeSubQuery() Takes MS:" + Long.toString(System.currentTimeMillis() - beginTime));
     }
 
     private void checkIsUnion() {

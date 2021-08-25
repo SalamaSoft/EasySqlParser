@@ -40,7 +40,7 @@ public abstract class SqlObj {
         _sqlPartList = SqlPartParser.parseSqlPart(_editingSql,
                 sqlPartKeywords, invalidSqlPartKeywords);
 
-        logger.debug("parseToSqlPart() Takes MS:" + Long.toString(System.currentTimeMillis() - beginTime));
+        //logger.debug("parseToSqlPart() Takes MS:" + Long.toString(System.currentTimeMillis() - beginTime));
     }
 
     protected void symbolizeLiteras() throws SqlParseException {
@@ -61,7 +61,7 @@ public abstract class SqlObj {
             }
         }
 
-        logger.debug("symbolizeLiteras() Takes MS:" + Long.toString(System.currentTimeMillis() - beginTime));
+        //logger.debug("symbolizeLiteras() Takes MS:" + Long.toString(System.currentTimeMillis() - beginTime));
     }
 
     public List<SqlPart> getSqlPartList() {
